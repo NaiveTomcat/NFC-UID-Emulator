@@ -25,7 +25,6 @@ Android的NFC在模擬Rfid時的tag碼可以在/system/etc/libnfc-nxp.conf中設
 ## Screenshot
 ![主畫面](screenshot/Screenshot1.png)
 ![新增uid](screenshot/Screenshot2.png)
-![選單](screenshot/Screenshot3.png)
 ---------------------------------------
 ## 測試機規格
 * Xiaomi 5s Plus
