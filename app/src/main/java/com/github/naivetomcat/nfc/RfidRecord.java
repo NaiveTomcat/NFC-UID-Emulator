@@ -1,4 +1,4 @@
-package com.github.kny.nfc;
+package com.github.naivetomcat.nfc;
 
 /**
  * Created by Huang on 2017/5/20.

@@ -1,4 +1,4 @@
-package com.github.kny.nfc;
+package com.github.naivetomcat.nfc;
 
 import org.junit.Test;
 

@@ -1,7 +1,7 @@
 apply plugin: 'com.android.application'
 
 android {
-    namespace "com.github.kny.nfc"
+    namespace "com.github.naivetomcat.nfc"
     compileSdk 34
 
     defaultConfig {

@@ -1,4 +1,4 @@
-package com.github.kny.nfc;
+package com.github.naivetomcat.nfc;
 import java.util.List;
 
 import android.content.Context;

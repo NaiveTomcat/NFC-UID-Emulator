@@ -1,4 +1,4 @@
-package com.github.kny.nfc;
+package com.github.naivetomcat.nfc;
 
 import android.Manifest;
 import android.app.PendingIntent;
@@ -273,16 +273,18 @@ public class MainActivity extends AppCompatActivity {
 
     /** 改寫UID **/
     public boolean WriteUid(String uid) {
-        String RfidInfo = readInfo("RfidRecord/default.conf");
+        String RfidInfo = readInfo("RfidRecord/Template.conf");
         // 用Regex查找並更改UID 待改善
-        String replaced = RfidInfo.replaceAll("( {8}33, 04,) [A-Z0-9]{2}, [A-Z0-9]{2}, [A-Z0-9]{2}, [A-Z0-9]{2},", String.format("$1%s,", uid));
-        writeInfo("RfidRecord/copy.conf", replaced);
+        // TODO: 编写更新UID的相应配置
+        String replaced = RfidInfo.replaceAll("CHANGEMENFCABC", String.format("33, 04, %s", uid))
+                .replaceAll("NFCCHANGEMEQWE", String.format("33, 04, %s", uid));
+        writeInfo("RfidRecord/Copy.conf", replaced);
         // Overwrite uid.
         boolean mountRet = ExecuteAsRoot.execute(new ArrayList<String>(
-                Arrays.asList(
-                        "mount -o remount,rw /system",
-                        "cp -f /storage/emulated/0/RfidRecord/copy.conf /vendor/odm/etc/libnfc-nxp_RF.conf",
-                        "mount -o remount,ro /system"
+                List.of(
+//                        "mount -o remount,rw /system",
+                        "mount -o remount,rw /vendor/etc/libnfc-nxp.conf && cp -f /storage/emulated/0/RfidRecord/Copy.conf /vendor/etc/libnfc-nxp.conf"
+//                        "mount -o remount,ro /system"
                 )));
         // NFC reboot.
         boolean rebootRet = ExecuteAsRoot.execute(new ArrayList<String>(
