@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="com.github.naivetomcat.nfc.MainActivity">
+    tools:context="cn.naivetomcat.m1emu.MainActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
@@ -27,6 +27,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
+        android:contentDescription="Add"
         app:srcCompat="@android:drawable/ic_input_add" />
 
     <include layout="@layout/content_main" />
